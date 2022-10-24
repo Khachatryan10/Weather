@@ -365,11 +365,11 @@ body {
 @media screen and (max-height:300px) {
 
     #hd1 {
-        margin-top: -140vh;
+        margin-top: -200vh;
     }
 
     #Textcontainer {
-        height: 150vh;
+        height: 210vh;
     }
 }
 
