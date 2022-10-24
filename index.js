@@ -23,8 +23,8 @@ let inputRangeVis = document.getElementById("inputRangeVis")
 let nextDayPrgs = document.querySelectorAll(".nxPrg"),np;
 let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
-if (input.value !== ""){
 async function display(){
+if (input.value !== ""){
 video.style.border = "1px dashed white"
 video.style.opacity = "0.50"
 await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid=${apiKey}`,{
