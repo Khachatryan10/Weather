@@ -10,7 +10,7 @@ let dtContainers = document.querySelectorAll(".dtContainers"),d;
 let todayDtContainers = document.querySelectorAll(".todayContainers"),t;
 let nexDaysContainer = document.querySelectorAll(".nextdaysContainers"),n;
 let hdContainer = document.getElementById("hdContainer")
-//video.play()
+
 let prg1 = document.getElementById("prg1")
 let prg2 = document.getElementById("prg2")
 let prg3 = document.getElementById("prg3")
@@ -23,10 +23,10 @@ let inputRangeVis = document.getElementById("inputRangeVis")
 let nextDayPrgs = document.querySelectorAll(".nxPrg"),np;
 let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 
+if (input.value !== ""){
 async function display(){
 video.style.border = "1px dashed white"
 video.style.opacity = "0.50"
-
 await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid=${apiKey}`,{
     method: "GET"
 })
@@ -173,6 +173,7 @@ await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appi
     })
     .catch(err => console.log(err))
 }
-
+}
+    
 input.addEventListener("search",display)
 button.addEventListener("click",display)
