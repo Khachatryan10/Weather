@@ -57,10 +57,6 @@ body {
     z-index: -1;
 }
 
-#video::-webkit-media-controls {
-    display:none !important;
-}
-
 #hd1 {
     margin-top: -75vh;
     text-align: center;
