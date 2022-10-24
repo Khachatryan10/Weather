@@ -362,16 +362,6 @@ body {
     }
 }
 
-@media screen and (max-height:300px) {
-
-    #hd1 {
-        margin-top: -230vh;
-    }
-
-    #Textcontainer {
-        height: 240vh;
-    }
-}
 
 @media screen and (max-width:400px) {
     #Textcontainer {
