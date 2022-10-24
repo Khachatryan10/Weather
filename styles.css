@@ -11,14 +11,12 @@ body {
     height: 30px;
     border-radius: 9px;
     width: 30%;
-    /*     min-width: 10rem; */
     margin-left: 35%;
 }
 
 #btn {
     margin-top: 1rem;
     width: 20%;
-    /*     min-width: 5.40rem; */
     height: 1.50rem;
     margin-left: 40%;
     border-radius: 8px;
@@ -27,15 +25,12 @@ body {
 
 #itemContainer {
     display: flex;
-    /*     justify-content: center; */
-    /*     margin-left: 30%; */
     margin-top: 0.80rem;
     width: 100%;
 }
 
 #btnContainer {
     display: flex;
-    /*     justify-content: center; */
     width: 100%;
 }
 
@@ -63,7 +58,7 @@ body {
 }
 
 #video::-webkit-media-controls {
-    display:none;
+    display:none !important;
 }
 
 #hd1 {
