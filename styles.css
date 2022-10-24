@@ -62,6 +62,9 @@ body {
     z-index: -1;
 }
 
+#video::-webkit-media-controls {
+    display:none;
+}
 
 #hd1 {
     margin-top: -75vh;
