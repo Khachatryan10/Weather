@@ -10,7 +10,7 @@ let dtContainers = document.querySelectorAll(".dtContainers"),d;
 let todayDtContainers = document.querySelectorAll(".todayContainers"),t;
 let nexDaysContainer = document.querySelectorAll(".nextdaysContainers"),n;
 let hdContainer = document.getElementById("hdContainer")
-video.play()
+//video.play()
 let prg1 = document.getElementById("prg1")
 let prg2 = document.getElementById("prg2")
 let prg3 = document.getElementById("prg3")
