@@ -9,14 +9,15 @@ let video = document.getElementById("video")
 let dtContainers = document.querySelectorAll(".dtContainers"),d;
 let todayDtContainers = document.querySelectorAll(".todayContainers"),t;
 let nexDaysContainer = document.querySelectorAll(".nextdaysContainers"),n;
-
+let hdContainer = document.getElementById("hdContainer")
+video.play()
 let prg1 = document.getElementById("prg1")
 let prg2 = document.getElementById("prg2")
 let prg3 = document.getElementById("prg3")
 let prg4 = document.getElementById("prg4")
 let prg5 = document.getElementById("prg5")
 let prgs = document.querySelectorAll(".tdPrg"),p;
-
+let day
 let inputRgHumidity = document.getElementById("inputRgHumidity")
 let inputRangeVis = document.getElementById("inputRangeVis")
 let nextDayPrgs = document.querySelectorAll(".nxPrg"),np;
@@ -26,7 +27,7 @@ async function display(){
 video.style.border = "1px dashed white"
 video.style.opacity = "0.50"
 
-await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid=${apiKey}`,{
+await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid=${apiKey}`,{
     method: "GET"
 })
             .then((res) => res.json())
@@ -66,10 +67,7 @@ await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid
                         JSON.stringify(result.weather.map(function(i){
                         h2.innerHTML = i.description[0].toUpperCase() + i.description.slice(1)
                         let keyWord = i.description
-                        
-                        
-                        
-                        
+                        hdContainer.style.display = "block"
                         for (let d = 0; d < dtContainers.length; d++){
                                 dtContainers[d].style.display = "block"
                         }
@@ -81,28 +79,29 @@ await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid
                         for (let n = 0; n < nexDaysContainer.length; n++){
                             nexDaysContainer[n].style.display = "block"
                         }
-                        
-                        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${elem.lat}&lon=${elem.lon}&appid=${apiKey}&units=metric`,{
+
+                         fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${elem.lat}&lon=${elem.lon}&appid=${apiKey}&units=metric`,{
                             method: "GET"
                         })
                         .then((res3) => res3.json())
                         .then((dayElem) => {
-                        
-                        let j = -1;
+                            let j = -1;
+
                             for (let p = 0; p < prgs.length; p++){
                             
                                 while (j <= 6){
                                     j++
                                     
-                                    let day = new Date(dayElem.list[j].dt_txt)
+                                    day = new Date(dayElem.list[j].dt_txt.slice(0,10))
                                         
-                                        if (dayElem.list[0].dt_txt.slice(0,11) === dayElem.list[j].dt_txt.slice(0,11)){
-                                            prgs[p].innerHTML = `Today <br> ${dayElem.list[j].dt_txt.slice(11,16)} <br> ${Math.round(dayElem.list[j].main.temp)} °C <br> ${dayElem.list[j].weather.map(e =>  e.description[0].toUpperCase() + e.description.slice(1))}`
-                                            // prgs[p].innerHTML = `Today/${weekdays[day.getDay()]} <br> ${dayElem.list[j].dt_txt.slice(11,16)} <br> ${Math.round(dayElem.list[j].main.temp)} °C <br> ${dayElem.list[j].weather.map(e =>  e.description[0].toUpperCase() + e.description.slice(1))}`
+                                        if (dayElem.list[0].dt_txt.slice(0,10) === dayElem.list[j].dt_txt.slice(0,10)){
+                                             prgs[p].innerHTML = `Today <br> ${dayElem.list[j].dt_txt.slice(11,16)} <br> ${Math.round(dayElem.list[j].main.temp)} °C <br> ${dayElem.list[j].weather.map(e =>  e.description[0].toUpperCase() + e.description.slice(1))}`
+
                                         }
                                         
                                         else{                                
                                             prgs[p].innerHTML = `${weekdays[day.getDay()]} <br> ${dayElem.list[j].dt_txt.slice(11,16)} <br> ${Math.round(dayElem.list[j].main.temp)} °C <br> ${dayElem.list[j].weather.map(e =>  e.description[0].toUpperCase() + e.description.slice(1))}`
+
                                         }
                                     break;
                                 }
@@ -112,7 +111,7 @@ await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${input.value}&appid
                         while (g <= 5){
                             g++
                             let TimeOfdays = dayElem.list.filter(el => el.dt_txt.slice(11,16) === "12:00")
-                            let nextDays = new Date(TimeOfdays[g].dt_txt)
+                            let nextDays = new Date(TimeOfdays[g].dt_txt.slice(0,10))
                                 nextDayPrgs[np].innerHTML = `${weekdays[nextDays.getDay()]} <br> ${Math.round(TimeOfdays[g].main.temp)} °C <br> ${TimeOfdays[g].weather.map(e => e.description[0].toUpperCase() + e.description.slice(1))}`
                             break
                             }
