@@ -304,6 +304,10 @@ body {
         height: 100%;
         border-radius: 0;
     }
+    
+   #Textcontainer {
+       border-radius: 0;
+   }  
 
     .todayContainers {
         margin: 0.20rem;
