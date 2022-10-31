@@ -354,13 +354,14 @@ body {
 @media screen and (max-height:600px) {
 
     #hd1 {
-        margin-top: -200vh;
+        margin-top: -110vh;
     }
 
     #Textcontainer {
-        height: 210vh;
+        height: 120vh;
     }
 }
+
 
 @media screen and (max-height:300px) {
 
