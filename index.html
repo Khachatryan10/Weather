@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2012/05/07/02/14/cloudy-47590_960_720.png">
+    <script src="https://kit.fontawesome.com/15b70c2106.js" crossorigin="anonymous"></script>
+    <title>Weather</title>
+</head>
+<body>
+<div id="itemContainer">
+            <input type="search" id="input" placeholder="Type location" autofocus list="location">
+            <datalist id="location">
+                <option value="" id="option">
+            </datalist>
+</div>
+<div id="btnContainer">
+    <button id="btn">Show</button>
+</div> 
+
+<div id="Textcontainer">
+        <video id="video" autoplay loop muted playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-night-sky-with-stars-at-a-calm-lake-time-lapse-1704-large.mp4" type="video/mp4">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-night-sky-with-stars-at-a-calm-lake-time-lapse-1704-large.mp4" type="video/ogg">
+        </video>
+        
+        <div id="hdContainer">
+            <h1 id="hd1"></h1>
+            <h2 id="hd2"></h2>
+        </div>
+
+<div class="globalContainer">
+        <div class="dtContainers">
+            <input type="range" id="inputRgHumidity" disabled>
+            <p id="prg1" class="prgs"></p>     
+        </div>
+        
+        <div class="dtContainers">
+            <input type="range" id="inputRangeVis" max="10" disabled>
+            <p id="prg2" class="prgs"></p>    
+        </div>
+
+        <div class="dtContainers">
+            <p id="prg3" class="prgs"></p>    
+        </div>
+
+        <div class="dtContainers">
+            <p id="prg4" class="prgs"></p>    
+        </div>
+
+        <div class="dtContainers">
+            <p id="prg5" class="prgs"></p>    
+        </div>
+</div>
+
+<div class="globalContainer2">
+
+    <div class="todayContainers">
+        <p id="todayPrg1" class="tdPrg"></p>
+    </div>
+
+    <div class="todayContainers">
+        <p id="todayPrg2" class="tdPrg"></p>
+    </div>
+
+    <div class="todayContainers">
+        <p id="todayPrg3" class="tdPrg"></p>
+    </div>
+
+    <div class="todayContainers">
+        <p id="todayPrg4" class="tdPrg"></p>
+    </div>
+
+    <div class="todayContainers">
+        <p id="todayPrg5" class="tdPrg"></p>
+    </div>
+
+    <div class="todayContainers">
+        <p id="todayPrg6" class="tdPrg"></p>
+    </div>
+
+    <div class="todayContainers">
+        <p id="todayPrg7" class="tdPrg"></p>
+    </div>
+</div>
+        
+<div class="globalContainer3">
+
+    <div class="nextdaysContainers">
+        <p class="nxPrg" id="nxPrg"></p>
+    </div>
+
+    <div class="nextdaysContainers">
+        <p class="nxPrg" id="nxPrg"></p>
+    </div>
+
+    <div class="nextdaysContainers">
+        <p class="nxPrg" id="nxPrg"></p>
+    </div>
+
+    <div class="nextdaysContainers">
+        <p class="nxPrg" id="nxPrg"></p>
+    </div>
+
+</div>
+
+</div>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
